@@ -1,0 +1,38 @@
+body {
+    font-family: Tahoma,Verdana,Arial;
+    font-size: 11px;
+    color: #444;
+}
+
+#m_main {
+    width: 800px;
+    margin: auto;
+}
+
+#m_top {
+    width: 100%;
+    margin-top: 20px;
+    padding-right: 10px;
+    text-align: right;
+}
+
+#m_menu {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
+
+#m_body {
+    width: 100%;
+}
+
+a:active, a:visited {
+    color: #0c4163;
+    text-decoration: underline;
+}
+
+a:hover {
+    color: #0c4163;
+    font-weight: bold;
+    text-decoration: none;
+}

@@ -47,7 +47,9 @@
           <td>Genero</td>
           <td>Activo</td>
           <th style="width:26px">
-            <img src="images/ins.png" alt="Nuevo"/>
+            <a href="profesoresIns.jsp">
+                <img src="images/ins.png" alt="Nuevo"/>
+            </a>
           </th>
           <th style="width:26px">
             <img src="images/del.png" alt="Eliminar"/>
