@@ -18,6 +18,8 @@
   </style>
 <link href="css/table.css" type="text/css" rel="stylesheet"/>
 
+
+
 <center>
   <h1>Lista de profesores de Cibertec</h1>
 
@@ -71,7 +73,7 @@
             <td><%= rs.getString(6) %></td>
             <td><%= rs.getString(7) %></td>
             <td><%= rs.getString(8) %></td>
-            <td><%=rs.getString(9) %></td>
+            <td colspan="2"><%=rs.getString(9) %></td>
             <th>
                 <input type="checkbox" value="<%= rs.getInt(1) %>" name="chk_del"/>
             </th>

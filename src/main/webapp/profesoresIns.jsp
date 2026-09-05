@@ -1,3 +1,4 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +10,7 @@
 <body>
   <div id="caja" style="margin:auto; width:280px">
     <form class="navy" action="ProfesorServlet" method="post">
-
+    <input type="hidden" name="accion" value="INS"/>
       <fieldset>
         <legend>Datos de nuevo profesor</legend>
         <label style="width:60px">Ap.Paterno</label>
@@ -49,6 +50,11 @@
     <p style="text-align:center">
       <a class="simple" href="profesores.jsp">Cancelar</a>
     </p>
+
+    <%
+        if(request.getAttribute("msnError")!=null)
+            out.print(request.getAttribute("msnError"));
+    %>
 
   </div>
 </body>
