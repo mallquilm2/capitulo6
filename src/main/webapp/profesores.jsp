@@ -18,7 +18,44 @@
   </style>
 <link href="css/table.css" type="text/css" rel="stylesheet"/>
 
+<script type="text/javascript">
+    function eliminar(){
+        var del = document.getElementsByName("chk_del");
+        var ids="";
+        for(i=0; i<del.length;i++){
+            if(del[i].checked){
+                ids+=del[i].value+",";
+            }
+        }
 
+        if(ids==""){
+            alert("Seleccione registro para eliminar");
+        }else{
+            if(confirm("¿Eliminar registros?")){
+                ids=ids.substring(0,ids.length-1);
+                window.location = "ProfesorServlet?accion=DEL&ids="+ids;
+            }
+        }
+    }
+
+    function modificar(){
+        var upd=document.getElementsByName("rad_upd");
+        var id="";
+
+        for(i=0;i<upd.length;i++){
+            if(upd[i].checked){
+                id=upd[i].value;
+                break;
+            }
+        }
+
+        if(id==""){
+            alert("Seleccione registro a actualizar");
+        }else{
+            window.location="profesoresMod.jsp?id="+id;
+        }
+    }
+</script>
 
 <center>
   <h1>Lista de profesores de Cibertec</h1>
@@ -54,10 +91,14 @@
             </a>
           </th>
           <th style="width:26px">
-            <img src="images/del.png" alt="Eliminar"/>
+            <a href="javascript:eliminar()">
+                <img src="images/del.png" alt="Eliminar"/>
+            </a>
           </th>
           <th style="width:26px">
-            <img src="images/upd.png" alt="Actualizar"/>
+            <a href="javascript:modificar()">
+                <img src="images/upd.png" alt="Actualizar"/>
+            </a>
           </th>
         </tr>
       </thead>
