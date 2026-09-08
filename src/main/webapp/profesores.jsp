@@ -2,6 +2,7 @@
 <%@page import="java.sql.Statement"%>
 <%@page import="java.sql.DriverManager"%>
 <%@page import="java.sql.Connection"%>
+<%@page import="edu.cibertec.dao.ConectaBD"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -62,9 +63,7 @@
 
     <%
     try{
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection cn = DriverManager.getConnection(
-        "jdbc:mysql://localhost:3306/escuela?serverTimezone=UTC","root","root");
+        Connection cn = ConectaBD.getInstance().getConexion();
         StringBuilder sql = new StringBuilder("SELECT ");
         sql.append("idprofesor,appaterno,apmaterno,nombres,");
         sql.append("nacimiento, direccion, referencia,genero,estado ");

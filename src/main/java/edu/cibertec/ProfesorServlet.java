@@ -1,5 +1,7 @@
 package edu.cibertec;
 
+import edu.cibertec.dao.ConectaBD;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,9 +29,7 @@ public class ProfesorServlet extends HttpServlet {
     private void processRequest(HttpServletRequest req, HttpServletResponse resp) throws IOException {
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            Connection cn = DriverManager.getConnection(
-                    "jdbc:mysql://localhost:3306/escuela?serverTimezone=UTC", "root", "root");
+            Connection cn = ConectaBD.getInstance().getConexion();
 
             String accion = req.getParameter("accion");
             if (accion.equals("INS")) {
